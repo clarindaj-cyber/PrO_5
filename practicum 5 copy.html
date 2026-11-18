@@ -1,0 +1,715 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberfort - Cybersecurity Services</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #edf3fa;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            background-color: #081b36;
+            padding: 15px 6%;
+        }
+
+        .logo {
+            color: white;
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #28a9ff;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 14px;
+            background-color: #123d70;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover {
+            background-color: #168bea;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            background-color: #e5f1ff;
+            padding: 65px 8%;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .welcome {
+            display: inline-block;
+            color: #087ac5;
+            background-color: white;
+            padding: 10px 15px;
+            border: 1px solid #168bea;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .hero h1 {
+            color: #081b36;
+            font-size: 45px;
+            margin: 10px 0;
+        }
+
+        .hero h1 span {
+            color: #168bea;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #087ac5;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border: 2px solid #087ac5;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: #081b36;
+            border-color: #081b36;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: #087ac5;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 480px;
+            height: 340px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        /* Highlights */
+        .strip {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            background-color: #081b36;
+            color: white;
+            padding: 30px 5%;
+        }
+
+        .strip-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .strip-icon {
+            font-size: 32px;
+        }
+
+        .strip-item h3 {
+            margin: 0;
+            color: #36b4ff;
+        }
+
+        .strip-item p {
+            margin: 5px 0 0;
+            font-size: 14px;
+        }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            padding: 45px 20px 0;
+        }
+
+        .section-title h2 {
+            color: #081b36;
+            margin: 0 0 10px;
+            font-size: 30px;
+        }
+
+        /* Services */
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 30px 5% 50px;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1 1 220px;
+            max-width: 260px;
+            background-color: white;
+            text-align: center;
+            padding: 25px 20px;
+            border: 1px solid #b5d8f5;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 40, 80, 0.15);
+        }
+
+        .card-icon {
+            font-size: 42px;
+            margin: 5px;
+        }
+
+        .card h3 {
+            color: #087ac5;
+            margin: 10px;
+        }
+
+        .card p {
+            flex-grow: 1;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .card .btn {
+            padding: 9px 20px;
+            margin-top: 10px;
+        }
+
+        /* How We Protect You */
+        .steps {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            gap: 20px;
+            background-color: white;
+            padding: 40px 8%;
+        }
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            background-color: #eaf3ff;
+            padding: 25px 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .step-wide {
+            flex: 2;
+            background-color: #dceeff;
+        }
+
+        .step-number {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #087ac5;
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .step h3 {
+            color: #081b36;
+            margin: 12px 0 8px;
+        }
+
+        .step p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* About Section */
+        .about {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            padding: 50px 8%;
+            background-color: #edf3fa;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            color: #081b36;
+        }
+
+        .about-text p {
+            line-height: 1.7;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 10px;
+        }
+
+        /* Contact Banner */
+        .contact-banner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            background-color: #087ac5;
+            color: white;
+            padding: 40px 8%;
+        }
+
+        .banner-text {
+            flex: 1 1 300px;
+        }
+
+        .banner-text h2 {
+            margin: 0 0 8px;
+        }
+
+        .banner-text p {
+            margin: 0;
+        }
+
+        .contact-banner .btn {
+            background-color: white;
+            color: #081b36;
+            border-color: white;
+        }
+
+        .contact-banner .btn:hover {
+            background-color: #081b36;
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            background-color: #061329;
+            color: white;
+            padding: 40px 8%;
+        }
+
+        .footer-col {
+            flex: 1 1 200px;
+        }
+
+        .footer-col h3 {
+            color: #36b4ff;
+            margin-top: 0;
+        }
+
+        .footer-col p {
+            color: #cbd8f5;
+            line-height: 1.6;
+        }
+
+        .footer-col a {
+            display: block;
+            color: #cbd8f5;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: #36b4ff;
+        }
+
+        .footer-bottom {
+            background-color: #030b19;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+        }
+
+        .footer-bottom span {
+            color: #36b4ff;
+            font-weight: bold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 800px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .steps {
+                flex-direction: column;
+            }
+
+            .about {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-banner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+
+        <div class="logo">
+            CYBER<span>FORT</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#protection">Protection</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero" id="home">
+
+        <div class="hero-text">
+
+            <div class="welcome">
+                YOUR SECURITY, OUR PRIORITY
+            </div>
+
+            <h1>
+                Welcome to
+                <span>Cyberfort</span>
+            </h1>
+
+            <p>
+                Cybersecurity Services to Protect Digital Assets
+            </p>
+
+            <p>
+                In a world of increasing cyber threats, Cyberfort
+                helps protect your personal information, business
+                networks and digital assets through reliable
+                cybersecurity solutions.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#services" class="btn">Our Services</a>
+                <a href="#about" class="btn btn-outline">Learn More</a>
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=900&q=80"
+                 alt="Cybersecurity and digital protection">
+        </div>
+
+    </div>
+
+    <!-- Highlights -->
+    <div class="strip">
+
+        <div class="strip-item">
+            <div class="strip-icon">🔐</div>
+            <div>
+                <h3>Data Security</h3>
+                <p>Protect important information</p>
+            </div>
+        </div>
+
+        <div class="strip-item">
+            <div class="strip-icon">🛡️</div>
+            <div>
+                <h3>Threat Prevention</h3>
+                <p>Prevent cyber attacks</p>
+            </div>
+        </div>
+
+        <div class="strip-item">
+            <div class="strip-icon">🌐</div>
+            <div>
+                <h3>Network Safety</h3>
+                <p>Secure digital networks</p>
+            </div>
+        </div>
+
+        <div class="strip-item">
+            <div class="strip-icon">💻</div>
+            <div>
+                <h3>Digital Support</h3>
+                <p>Reliable security assistance</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Services Section -->
+    <div class="section-title" id="services">
+        <h2>Our Cybersecurity Services</h2>
+        <p>Explore our solutions for a safer digital environment.</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="card-icon">🔒</div>
+            <h3>Data Protection</h3>
+            <p>
+                Safeguarding sensitive information from
+                unauthorized access and data theft.
+            </p>
+            <a href="#contact" class="btn">Explore</a>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🛡️</div>
+            <h3>Threat Detection</h3>
+            <p>
+                Identifying suspicious activities, malware
+                and potential cyber threats.
+            </p>
+            <a href="#contact" class="btn">Explore</a>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🌐</div>
+            <h3>Network Security</h3>
+            <p>
+                Protecting computer networks from
+                unauthorized access and attacks.
+            </p>
+            <a href="#contact" class="btn">Explore</a>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">📊</div>
+            <h3>Security Consulting</h3>
+            <p>
+                Providing guidance to improve digital
+                safety and security practices.
+            </p>
+            <a href="#contact" class="btn">Explore</a>
+        </div>
+
+    </div>
+
+    <!-- How We Protect You -->
+    <div class="section-title" id="protection"
+         style="background-color: white; padding-bottom: 0;">
+
+        <h2>How We Protect You</h2>
+        <p>Three important steps towards digital security.</p>
+
+    </div>
+
+    <div class="steps">
+
+        <div class="step">
+            <div class="step-number">1</div>
+            <h3>Identify</h3>
+            <p>
+                Identify security weaknesses and possible
+                cyber threats in digital systems.
+            </p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">2</div>
+            <h3>Protect</h3>
+            <p>
+                Apply security measures to safeguard
+                networks, devices and information.
+            </p>
+        </div>
+
+        <div class="step step-wide">
+            <div class="step-number">3</div>
+            <h3>Monitor</h3>
+            <p>
+                Continuously monitor systems, detect
+                suspicious activities and respond to
+                potential security incidents.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- About Section -->
+    <div class="about" id="about">
+
+        <div class="about-text">
+            <h2>About Cyberfort</h2>
+
+            <p>
+                Cyberfort is a cybersecurity-focused company
+                dedicated to protecting digital assets and
+                maintaining online safety.
+            </p>
+
+            <p>
+                Our aim is to create a secure digital environment
+                by helping individuals and organizations understand
+                cyber risks, protect their information and prevent
+                unauthorized access.
+            </p>
+
+            <p>
+                We believe that strong cybersecurity is essential
+                for a safer and more trusted digital future.
+            </p>
+        </div>
+
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
+                 alt="Digital technology and cybersecurity">
+        </div>
+
+    </div>
+
+    <!-- Contact Banner -->
+    <div class="contact-banner" id="contact">
+
+        <div class="banner-text">
+            <h2>Secure Your Digital World with Cyberfort</h2>
+            <p>
+                Stay protected. Stay informed. Stay one step ahead
+                of cyber threats.
+            </p>
+        </div>
+
+        <a href="mailto:contact@cyberfort.example" class="btn">
+            Contact Us
+        </a>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+
+        <div class="footer-col">
+            <h3>CYBERFORT</h3>
+            <p>
+                Cybersecurity services to protect digital assets.
+                Building a safer and more secure digital world.
+            </p>
+        </div>
+
+        <div class="footer-col">
+            <h3>Explore</h3>
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#services">Our Services</a>
+            <a href="#protection">Protection</a>
+        </div>
+
+        <div class="footer-col">
+            <h3>Our Services</h3>
+            <a href="#services">Data Protection</a>
+            <a href="#services">Threat Detection</a>
+            <a href="#services">Network Security</a>
+            <a href="#services">Security Consulting</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 <span>Cyberfort</span> | Protecting Your Digital World
+    </div>
+
+</body>
+</html>
